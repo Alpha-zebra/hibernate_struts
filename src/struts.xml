@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <package name="basicstruts" extends="struts-default">
+        <action name="*Category" class="action.CategoryAction" method="{1}">
+            <result name="list" type="redirect">listCategory</result>
+            <result name="edit">/category/edit.jsp</result>
+            <result name="listJsp">/category/list.jsp</result>
+        </action>
+        <action name="addProduct" class="action.ProductAction" method="add">
+            <result name="list" type="redirect">listProduct</result>
+        </action>
+        <action name="deleteProduct" class="action.ProductAction" method="delete">
+            <result name="list" type="redirect">listProduct</result>
+        </action>
+        <action name="editProduct" class="action.ProductAction" method="edit">
+            <result name="edit">/product/edit.jsp</result>
+        </action>
+        <action name="updateProduct" class="action.ProductAction" method="update">
+            <result name="list" type="redirect">listProduct</result>
+        </action>
+        <action name="listProduct" class="action.ProductAction" method="list">
+            <result name="listJsp" >/product/list.jsp</result>
+            <!--<result name="listJ"  type="redirect">test.jsp</result>-->
+
+            <!--<result name="listJsp">/product/list.jsp</result>-->
+        </action>
+        <action name="home" class="action.ProductAction" method="home">
+            <result name="home">index.jsp</result>
+        </action>
+    </package>
+
+</struts>
