@@ -17,6 +17,7 @@ public class test {
         Session s=sf.openSession();
         Query q=s.createQuery("from pojo.Product p");
 //       可以用sql语句;
+
         result=q.list();
         System.out.println("===================================");
         result.forEach(product -> {
